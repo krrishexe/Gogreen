@@ -5,7 +5,6 @@ import Footer from './Footer'
 function About() {
     return (
         <div>
-            <Navbar />
             <div>
 
                 {/* ##### Header Area End ##### */}
@@ -362,7 +361,6 @@ function About() {
                 </section>
                 {/* ##### Team Area End ##### */}
                 {/* ##### Footer Area Start ##### */}
-                <Footer />
                 {/* ##### Footer Area End ##### */}
                 {/* ##### All Javascript Files ##### */}
                 {/* jQuery-2.2.4 js */}

@@ -7,7 +7,6 @@ function Shopdetails() {
         <div>
             <div>
                 {/* Preloader */}
-                \<Navbar />
                 {/* ##### Header Area End ##### */}
                 {/* ##### Breadcrumb Area Start ##### */}
                 <div className="breadcrumb-area">
@@ -359,7 +358,6 @@ function Shopdetails() {
                 </div>
                 {/* ##### Related Product Area End ##### */}
                 {/* ##### Footer Area Start ##### */}
-                <Footer />
                 {/* ##### Footer Area End ##### */}
                 {/* ##### All Javascript Files ##### */}
                 {/* jQuery-2.2.4 js */}

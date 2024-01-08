@@ -9,19 +9,11 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 function Home() {
 
-    const navigate = useNavigate()
-        
-        // const handleOnClick = () =>{
-        //     navigate('/singlepost')
-        // }
-
+   
     return (
         <div>
             <div>
-                {/* ##### Header Area Start ##### */}
-                <Navbar />
-                {/* ##### Header Area End ##### */}
-                {/* ##### Hero Area Start ##### */}
+
                 <section className="hero-area">
                     <div className="hero-post-slides ">
                         {/* Single Hero Post */}
@@ -717,7 +709,6 @@ function Home() {
                 </section>
                 {/* ##### Contact Area End ##### */}
                 {/* ##### Footer Area Start ##### */}
-                <Footer />
             </div>
 
         </div>

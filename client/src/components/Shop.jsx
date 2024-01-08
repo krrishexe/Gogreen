@@ -9,7 +9,6 @@ function Shop() {
         <div>
             <div>
                 {/* Preloader */}
-                <Navbar/>
                 {/* ##### Header Area End ##### */}
                 {/* ##### Breadcrumb Area Start ##### */}
                 <div className="breadcrumb-area">
@@ -423,7 +422,6 @@ function Shop() {
                 </section>
                 {/* ##### Shop Area End ##### */}
                 {/* ##### Footer Area Start ##### */}
-                <Footer />
                 {/* ##### Footer Area End ##### */}
                 {/* ##### All Javascript Files ##### */}
                 {/* jQuery-2.2.4 js */}

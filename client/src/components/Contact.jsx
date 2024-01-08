@@ -10,7 +10,6 @@ function Contact() {
         <div>
             <div>
                 {/* ##### Header Area Start ##### */}
-                <Navbar/>
                 {/* ##### Header Area End ##### */}
                 {/* ##### Breadcrumb Area Start ##### */}
                 <div className="breadcrumb-area">
@@ -123,7 +122,6 @@ function Contact() {
                 </section>
                 {/* ##### Contact Area End ##### */}
                 {/* ##### Footer Area Start ##### */}
-                <Footer />
                 {/* ##### Footer Area End ##### */}
                 {/* ##### All Javascript Files ##### */}
                 {/* jQuery-2.2.4 js */}
