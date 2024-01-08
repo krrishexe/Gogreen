@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useContext} from 'react'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import "../../public/style.css"
@@ -7,11 +7,29 @@ import bg2 from '../img/bg-img/2.jpg'
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import RelatedProducts from './RelatedProducts';
 import ViewAll from './ViewAll';
+import { Context } from '../utils/Context';
+import {fetchFromApi} from "../utils/Api"
+import Products from './Products';
+
+
+
 function Home() {
 
-   
+    const {products,setProducts} = useContext(Context)
+
+    useEffect(()=>{
+        getProducts()
+    },[])
+
+    const getProducts = () =>{
+        fetchFromApi("/api/products?populate=*")
+        .then((res)=>{
+            setProducts(res)
+            console.log(res)
+        })
+    }
+
     return (
         <div>
             <div>
@@ -461,7 +479,7 @@ function Home() {
                             </div>
                         </div>
                         {/* related products */}
-                        <RelatedProducts />
+                        <Products products={products} limit={4} />
                         <ViewAll />
                         
                     </div>

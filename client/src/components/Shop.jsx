@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import { useNavigate } from 'react-router-dom'
-import RelatedProducts from './RelatedProducts';
+import Products from './Products';
+import { Context } from '../utils/Context';
+import { useContext } from 'react';
 
 function Shop() {
-    const navigate = useNavigate();
+    const {products} = useContext(Context)
+    console.log(products)
+   
+
     return (
         <div>
             <div>
@@ -157,7 +162,7 @@ function Shop() {
                                 <div className="shop-products-area">
                                     <div className="row">
                                         {/* Single Product Area */}
-                                        <RelatedProducts />
+                                        <Products products={products} />
                                         
                                     </div>
                                     {/* Pagination */}

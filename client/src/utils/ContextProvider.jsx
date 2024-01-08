@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Context } from "./Context";
 
 const ContextProvider = ({ children }) => {
-    const [data, setData] = useState([])
+    const [products, setProducts] = useState([])
     return (
-        <Context.Provider value={{ data, setData }}>
+        <Context.Provider value={{ products, setProducts }}>
             {children}
         </Context.Provider>
     )

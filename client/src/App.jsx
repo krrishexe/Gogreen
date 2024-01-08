@@ -14,8 +14,9 @@ import SinglePost from './components/SinglePost';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ContextProvider from "./utils/ContextProvider"
-import Product from './components/Shopdetails';
+import Product from './components/Productdetails';
 import Cart from './components/Cart';
+import Nopage from './components/Nopage';
 
 function App() {
 
@@ -30,10 +31,11 @@ function App() {
           <Route element={<SinglePost />} path='/singlepost' />
           <Route element={<About />} path='/about' />
           <Route element={<Shop />} exact path='/shop' />
-          <Route element={<Product />} exact path='/shop/:id' />
+          <Route element={<Product />} exact path='/product/:id' />
           <Route element={<Portfolio />} exact path='/portfolio' />
           <Route element={<Contact />} exact path='/contact' />
           <Route element={<Cart />} exact path='/cart' />
+          <Route element={<Nopage />} exact path='/*' />
 
         </Routes>
         <Footer />

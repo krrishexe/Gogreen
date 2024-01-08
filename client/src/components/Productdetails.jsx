@@ -1,9 +1,15 @@
 import React from 'react'
-import Navbar from './Navbar'
-import Footer from './Footer'
-import RelatedProducts from './RelatedProducts'
+import Products from './Products'
+import useFetch from '../hooks/useFetch'
+import {useParams} from 'react-router-dom'
 
-function Shopdetails() {
+
+function Productdetails() {
+    const {id} = useParams()
+    const {data} = useFetch(`/api/products?populate=*&[filters] [id]=${id}`)
+
+    if(!data) return <h1>Hello</h1>;
+    const product = data.data[0].attributes
     return (
         <div>
             <div>
@@ -41,37 +47,31 @@ function Shopdetails() {
                                             <div className="carousel-inner">
                                                 <div className="carousel-item active">
                                                     <a className="product-img" href="img/bg-img/49.jpg" title="Product Image">
-                                                        <img className="d-block w-100" src="img/bg-img/49.jpg" alt={1} />
+                                                        <img className="d-block w-100" src={import.meta.env.VITE_APP_DEV_URL + product.img.data[0].attributes.url} alt={1} />
                                                     </a>
                                                 </div>
                                                 <div className="carousel-item">
                                                     <a className="product-img" href="img/bg-img/49.jpg" title="Product Image">
-                                                        <img className="d-block w-100" src="img/bg-img/49.jpg" alt={1} />
-                                                    </a>
-                                                </div>
-                                                <div className="carousel-item">
-                                                    <a className="product-img" href="img/bg-img/49.jpg" title="Product Image">
-                                                        <img className="d-block w-100" src="img/bg-img/49.jpg" alt={1} />
+                                                        <img className="d-block w-100" src={import.meta.env.VITE_APP_DEV_URL + product.img.data[1].attributes.url} alt={1} />
                                                     </a>
                                                 </div>
                                             </div>
                                             <ol className="carousel-indicators">
-                                                <li className="active" data-target="#product_details_slider" data-slide-to={0} style={{ backgroundImage: 'url(img/bg-img/49.jpg)' }}>
+                                                <li className="active" data-target="#product_details_slider" data-slide-to={0} style={{ backgroundImage: `url(${import.meta.env.VITE_APP_DEV_URL + product.img.data[0].attributes.url})` }}>
                                                 </li>
-                                                <li data-target="#product_details_slider" data-slide-to={1} style={{ backgroundImage: 'url(img/bg-img/49.jpg)' }}>
+                                                <li data-target="#product_details_slider" data-slide-to={1} style={{ backgroundImage: `url(${import.meta.env.VITE_APP_DEV_URL + product.img.data[1].attributes.url})` }}>
                                                 </li>
-                                                <li data-target="#product_details_slider" data-slide-to={2} style={{ backgroundImage: 'url(img/bg-img/49.jpg)' }}>
-                                                </li>
+                                                
                                             </ol>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-12 col-md-6">
                                     <div className="single_product_desc">
-                                        <h4 className="title">Recuerdos Plant</h4>
-                                        <h4 className="price">$9.99</h4>
+                                        <h4 className="title">{product.title}</h4>
+                                        <h4 className="price">${product.price}</h4>
                                         <div className="short_overview">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellem malesuada in nibh selama euismod. Curabitur a rhoncus dui. Nunc lobortis cursus magna utrum faucibus. Vivamus justo nibh, pharetra non risus accumsan, tincidunt suscipit leo.</p>
+                                            <p>{product.description}</p>
                                         </div>
                                         <div className="cart--area d-flex flex-wrap align-items-center">
                                             {/* Add to Cart Form */}
@@ -128,20 +128,19 @@ function Shopdetails() {
                                     <div className="tab-content">
                                         <div role="tabpanel" className="tab-pane fade show active" id="description">
                                             <div className="description_area">
-                                                <p>Sed a facilisis orci. Curabitur magna urna, varius placerat placerat sodales, pretium vitae orci. Aliquam erat volutpat. Cras sit amet suscipit magna. Quisque turpis odio, facilisis vel eleifend eu, dignissim ac odio.</p>
-                                                <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. In scelerisque augue at the moment mattis. Proin vitae arcu sit amet justo sollicitudin tincidunt sit amet ut velit.Proin placerat vel augue eget euismod. Phasellus cursus orci eu tellus vestibulum, vestibulum urna accumsan. Vestibulum ut ullamcorper sapien. Pellentesque molestie, est ac vestibulum eleifend, lorem ipsum mollis ipsum.</p>
+                                                <p>{product.description}</p>
                                             </div>
                                         </div>
                                         <div role="tabpanel" className="tab-pane fade" id="addi-info">
                                             <div className="additional_info_area">
                                                 <p>What should I do if I receive a damaged parcel?
-                                                    <br /> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit similique qui, itaque delectus labore.</span></p>
+                                                    <br /> <span>Contact the shipping company or retailer and provide details about the damaged parcel for resolution.</span></p>
                                                 <p>I have received my order but the wrong item was delivered to me.
-                                                    <br /> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis quam voluptatum beatae harum tempore, ab?</span></p>
+                                                    <br /> <span>Contact the retailer or seller immediately to report the issue and arrange for the correct item to be sent or a refund.</span></p>
                                                 <p>Product Receipt and Acceptance Confirmation Process
-                                                    <br /> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ducimus, temporibus soluta impedit minus rerum?</span></p>
+                                                    <br /> <span>Upon receiving the product, carefully inspect it for any damages or discrepancies.</span></p>
                                                 <p>How do I cancel my order?
-                                                    <br /> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum eius eum, minima!</span></p>
+                                                    <br /> <span>Sorry this option is not available in your country.</span></p>
                                             </div>
                                         </div>
                                         <div role="tabpanel" className="tab-pane fade" id="reviews">
@@ -262,7 +261,7 @@ function Shopdetails() {
                             </div>
                         </div>
 
-                        <RelatedProducts />
+                        <Products />
                     </div>
                 </div>
                 {/* ##### Related Product Area End ##### */}
@@ -280,4 +279,4 @@ function Shopdetails() {
     )
 }
 
-export default Shopdetails
+export default Productdetails
