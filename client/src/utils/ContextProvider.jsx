@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Context } from "./Context";
 
-const contextProvider = ({ children }) => {
+const ContextProvider = ({ children }) => {
     const [data, setData] = useState([])
     return (
         <Context.Provider value={{ data, setData }}>
@@ -10,4 +10,4 @@ const contextProvider = ({ children }) => {
     )
 }
 
-export default contextProvider;
+export default ContextProvider;

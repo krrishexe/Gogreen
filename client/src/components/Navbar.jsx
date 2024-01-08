@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Context } from '../utils/Context'
+
 
 function Navbar() {
     return (
@@ -44,7 +46,7 @@ function Navbar() {
                                         </div>
                                         {/* Cart */}
                                         <div className="cart">
-                                            <a href="#"><i className="fa fa-shopping-cart" aria-hidden="true" /> <span>Cart <span className="cart-quantity">(1)</span></span></a>
+                                            <Link to={'/cart'}><i className="fa fa-shopping-cart" aria-hidden="true" /> <span>Cart <span className="cart-quantity">(1)</span></span></Link>
                                         </div>
                                     </div>
                                 </div>

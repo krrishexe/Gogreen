@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import RelatedProducts from './RelatedProducts'
 
 function Shopdetails() {
     return (
@@ -260,100 +261,8 @@ function Shopdetails() {
                                 </div>
                             </div>
                         </div>
-                        <div className="row">
-                            {/* Single Product Area */}
-                            <div className="col-12 col-sm-6 col-lg-3">
-                                <div className="single-product-area mb-100">
-                                    {/* Product Image */}
-                                    <div className="product-img">
-                                        <a href="shop-details.html"><img src="img/bg-img/40.png" alt /></a>
-                                        {/* Product Tag */}
-                                        <div className="product-tag">
-                                            <a href="#">Hot</a>
-                                        </div>
-                                        <div className="product-meta d-flex">
-                                            <a href="#" className="wishlist-btn"><i className="icon_heart_alt" /></a>
-                                            <a href="cart.html" className="add-to-cart-btn">Add to cart</a>
-                                            <a href="#" className="compare-btn"><i className="arrow_left-right_alt" /></a>
-                                        </div>
-                                    </div>
-                                    {/* Product Info */}
-                                    <div className="product-info mt-15 text-center">
-                                        <a href="shop-details.html">
-                                            <p>Cactus Flower</p>
-                                        </a>
-                                        <h6>$10.99</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* Single Product Area */}
-                            <div className="col-12 col-sm-6 col-lg-3">
-                                <div className="single-product-area mb-100">
-                                    {/* Product Image */}
-                                    <div className="product-img">
-                                        <a href="shop-details.html"><img src="img/bg-img/41.png" alt /></a>
-                                        <div className="product-meta d-flex">
-                                            <a href="#" className="wishlist-btn"><i className="icon_heart_alt" /></a>
-                                            <a href="cart.html" className="add-to-cart-btn">Add to cart</a>
-                                            <a href="#" className="compare-btn"><i className="arrow_left-right_alt" /></a>
-                                        </div>
-                                    </div>
-                                    {/* Product Info */}
-                                    <div className="product-info mt-15 text-center">
-                                        <a href="shop-details.html">
-                                            <p>Cactus Flower</p>
-                                        </a>
-                                        <h6>$10.99</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* Single Product Area */}
-                            <div className="col-12 col-sm-6 col-lg-3">
-                                <div className="single-product-area mb-100">
-                                    {/* Product Image */}
-                                    <div className="product-img">
-                                        <a href="shop-details.html"><img src="img/bg-img/42.png" alt /></a>
-                                        <div className="product-meta d-flex">
-                                            <a href="#" className="wishlist-btn"><i className="icon_heart_alt" /></a>
-                                            <a href="cart.html" className="add-to-cart-btn">Add to cart</a>
-                                            <a href="#" className="compare-btn"><i className="arrow_left-right_alt" /></a>
-                                        </div>
-                                    </div>
-                                    {/* Product Info */}
-                                    <div className="product-info mt-15 text-center">
-                                        <a href="shop-details.html">
-                                            <p>Cactus Flower</p>
-                                        </a>
-                                        <h6>$10.99</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* Single Product Area */}
-                            <div className="col-12 col-sm-6 col-lg-3">
-                                <div className="single-product-area mb-100">
-                                    {/* Product Image */}
-                                    <div className="product-img">
-                                        <a href="shop-details.html"><img src="img/bg-img/43.png" alt /></a>
-                                        {/* Product Tag */}
-                                        <div className="product-tag sale-tag">
-                                            <a href="#">Hot</a>
-                                        </div>
-                                        <div className="product-meta d-flex">
-                                            <a href="#" className="wishlist-btn"><i className="icon_heart_alt" /></a>
-                                            <a href="cart.html" className="add-to-cart-btn">Add to cart</a>
-                                            <a href="#" className="compare-btn"><i className="arrow_left-right_alt" /></a>
-                                        </div>
-                                    </div>
-                                    {/* Product Info */}
-                                    <div className="product-info mt-15 text-center">
-                                        <a href="shop-details.html">
-                                            <p>Cactus Flower</p>
-                                        </a>
-                                        <h6>$10.99</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                        <RelatedProducts />
                     </div>
                 </div>
                 {/* ##### Related Product Area End ##### */}
