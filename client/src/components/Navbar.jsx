@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Context } from '../utils/Context'
 
 
+
 function Navbar() {
+    const { cartCount } = useContext(Context)
     return (
         <div>
             <div className="preloader d-flex align-items-center justify-content-center">
@@ -46,7 +48,10 @@ function Navbar() {
                                         </div>
                                         {/* Cart */}
                                         <div className="cart">
-                                            <Link to={'/cart'}><i className="fa fa-shopping-cart" aria-hidden="true" /> <span>Cart <span className="cart-quantity">(1)</span></span></Link>
+                                            <Link to={'/cart'}>
+                                                <i className="fa fa-shopping-cart" aria-hidden="true" />
+                                                <span>Cart {!!cartCount && <span className="cart-quantity">({cartCount})</span>}</span>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>

@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {useNavigate} from 'react-router-dom'
+import { Context } from '../utils/Context'
+
 
 function Product({id,data}) {
+    
     const navigate = useNavigate()
     return (
 
@@ -14,11 +17,7 @@ function Product({id,data}) {
                     <div className="product-tag">
                         <a href="#">Hot</a>
                     </div>
-                    <div className="product-meta d-flex">
-                        <a href="#" className="wish list-btn"><i className="icon_heart_alt" /></a>
-                        <a href="cart.html" className="add-to-cart-btn">Add to cart</a>
-                        <a href="#" className="compare-btn"><i className="arrow_left-right_alt" /></a>
-                    </div>
+                    
                 </div>
                 {/* Product Info */}
                 <div className="product-info mt-15 text-center">

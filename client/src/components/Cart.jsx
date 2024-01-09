@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { BsCartX } from "react-icons/bs";
 import ViewAll from './ViewAll';
 import CartItem from './CartItem';
+import { Context } from '../utils/Context';
+
 
 function Cart() {
+    const { cartItems, cartSubTotal } = useContext(Context)
     return (
         <div>
             {/* ##### Header Area End ##### */}
@@ -30,12 +33,16 @@ function Cart() {
 
 
 
-            {/* <div className='empty-cart'>
-                <BsCartX />
-                <span>No products in the cart.</span>
-                <ViewAll />
-            </div> */}
-            <div className="cart-area section-padding-0-100 clearfix">
+            {
+                !cartItems?.length && <div className='empty-cart'>
+                    <BsCartX />
+                    <span>No products in the cart.</span>
+                    <ViewAll />
+                    <div style={{display:'block',height:'100px'}}></div>
+                </div>
+            }
+
+            {!!cartItems?.length && <div className="cart-area section-padding-0-100 clearfix">
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
@@ -76,7 +83,7 @@ function Cart() {
                                 <h5 className="title--">Cart Total</h5>
                                 <div className="subtotal d-flex justify-content-between">
                                     <h5>Subtotal</h5>
-                                    <h5>$9.99</h5>
+                                    <h5>${cartSubTotal}</h5>
                                 </div>
                                 <div className="shipping d-flex justify-content-between">
                                     <h5>Shipping</h5>
@@ -98,7 +105,7 @@ function Cart() {
                                 </div>
                                 <div className="total d-flex justify-content-between">
                                     <h5>Total</h5>
-                                    <h5>$9.99</h5>
+                                    <h5>${cartSubTotal}</h5>
                                 </div>
                                 <div className="checkout-btn">
                                     <a href="#" className="btn alazea-btn w-100">PROCEED TO CHECKOUT</a>
@@ -107,7 +114,7 @@ function Cart() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>}
             {/* ##### Cart Area End ##### */}
             {/* ##### Footer Area Start ##### */}
             {/* ##### Footer Area End ##### */}

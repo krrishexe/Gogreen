@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function ViewAll() {
     return (
         <div className="col-12 text-center">
-            <a href="#" className="btn alazea-btn">View Items</a>
+            <Link to={'/shop'} className="btn alazea-btn">View Items</Link>
         </div>
     )
 }

@@ -4,7 +4,6 @@ import Footer from './Footer'
 
 function Portfolio() {
     return (
-        <div>
             <div>
                 {/* ##### Header Area End ##### */}
                 {/* ##### Breadcrumb Area Start ##### */}
@@ -236,8 +235,6 @@ function Portfolio() {
                 {/* All Plugins js */}
                 {/* Active js */}
             </div>
-
-        </div>
     )
 }
 
