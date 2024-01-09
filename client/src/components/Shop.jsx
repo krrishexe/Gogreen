@@ -56,12 +56,6 @@ function Shop() {
                                                 <option value={2}>Short by Sales</option>
                                                 <option value={3}>Short by Ratings</option>
                                             </select>
-                                            <select className="custom-select widget-title">
-                                                <option selected>Show: 9</option>
-                                                <option value={1}>12</option>
-                                                <option value={2}>18</option>
-                                                <option value={3}>24</option>
-                                            </select>
                                         </form>
                                     </div>
                                 </div>
@@ -166,13 +160,7 @@ function Shop() {
                                         
                                     </div>
                                     {/* Pagination */}
-                                    <nav aria-label="Page navigation">
-                                        <ul className="pagination">
-                                            <li className="page-item"><a className="page-link" href="#">1</a></li>
-                                            <li className="page-item"><a className="page-link" href="#">2</a></li>
-                                            <li className="page-item"><a className="page-link" href="#"><i className="fa fa-angle-right" /></a></li>
-                                        </ul>
-                                    </nav>
+                                    
                                 </div>
                             </div>
                         </div>

@@ -29,19 +29,6 @@ function Navbar() {
                                     {/* Top Header Content */}
                                     <div className="top-header-meta d-flex">
                                         {/* Language Dropdown */}
-                                        <div className="language-dropdown">
-                                            <div className="dropdown">
-                                                <button className="btn btn-secondary dropdown-toggle mr-30" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language</button>
-                                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a className="dropdown-item" href="#">USA</a>
-                                                    <a className="dropdown-item" href="#">UK</a>
-                                                    <a className="dropdown-item" href="#">Bangla</a>
-                                                    <a className="dropdown-item" href="#">Hindi</a>
-                                                    <a className="dropdown-item" href="#">Spanish</a>
-                                                    <a className="dropdown-item" href="#">Latin</a>
-                                                </div>
-                                            </div>
-                                        </div>
                                         {/* Login */}
                                         <div className="login">
                                             <a href="#"><i className="fa fa-user" aria-hidden="true" /> <span>Login</span></a>
