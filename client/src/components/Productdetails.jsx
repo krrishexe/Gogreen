@@ -3,9 +3,10 @@ import Products from './Products'
 import useFetch from '../hooks/useFetch'
 import { useParams } from 'react-router-dom'
 import { Context } from '../utils/Context'
-
+import { useAuth0 } from '@auth0/auth0-react'
 
 function Productdetails() {
+    const { isAuthenticated } = useAuth0()
     const { products, handleAddToCart } = useContext(Context)
     const [quantity, setQuantity] = useState(1)
 
@@ -93,10 +94,19 @@ function Productdetails() {
                                                 <span className="qty-text" id="qty">{quantity}</span>
                                                 <span className="qty-plus" onClick={handleIncrement}><i className="fa fa-plus" aria-hidden="true" /></span>
                                             </div>
-                                            <button name="addtocart" onClick={() => {
-                                                handleAddToCart(data.data[0], quantity)
-                                                setQuantity(1)
-                                            }} className="btn alazea-btn ml-15">Add to cart</button>
+                                            {
+
+                                                isAuthenticated ? 
+                                                (<button name="addtocart" onClick={() => {
+                                                    handleAddToCart(data.data[0], quantity)
+                                                    setQuantity(1)
+                                                }} className="btn alazea-btn ml-15">Add to cart</button>)
+                                                    :
+                                                    (
+                                                        <button name="addtocart" disabled  className="btn  alazea-btn ml-15">Please login to continue</button>
+                                                    )
+
+                                            }
                                         </div>
                                         {/* Wishlist & Compare */}
                                         <div className="wishlist-compare d-flex flex-wrap align-items-center">

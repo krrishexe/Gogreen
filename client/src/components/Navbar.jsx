@@ -1,11 +1,18 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Context } from '../utils/Context'
+import { useAuth0 } from "@auth0/auth0-react";
+
+
 
 
 
 function Navbar() {
     const { cartCount } = useContext(Context)
+    const { loginWithRedirect, logout } = useAuth0();
+
+    const { isAuthenticated, user } = useAuth0()
+
     return (
         <div>
             <div className="preloader d-flex align-items-center justify-content-center">
@@ -27,17 +34,32 @@ function Navbar() {
                                         <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i className="fa fa-phone" aria-hidden="true" /> <span>Call Us: +91 93066 86556</span></a>
                                     </div>
                                     {/* Top Header Content */}
-                                    <div className="top-header-meta d-flex">
+                                    <div className="top-header-meta d-flex" style={{justifyContent:'space-around',width:'300px'}}>
                                         {/* Language Dropdown */}
                                         {/* Login */}
                                         <div className="login">
-                                            <a href="#"><i className="fa fa-user" aria-hidden="true" /> <span>Login</span></a>
+                                            {
+                                                isAuthenticated ? (<a style={{ cursor: 'pointer' }} onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}><i className="fa fa-user" aria-hidden="true" /> <span>Logout</span></a>) : (
+                                                    <a style={{ cursor: 'pointer' }} onClick={() => loginWithRedirect()}><i className="fa fa-user" aria-hidden="true" /> <span>Login</span></a>)
+                                            }
                                         </div>
                                         {/* Cart */}
                                         <div className="cart">
                                             <Link to={'/cart'}>
                                                 <i className="fa fa-shopping-cart" aria-hidden="true" />
                                                 <span>Cart {!!cartCount && <span className="cart-quantity">({cartCount})</span>}</span>
+                                            </Link>
+                                        </div>
+                                        <div className="cart">
+                                            <Link >
+                                                {
+                                                    isAuthenticated && (
+                                                        <div style={{display:'flex',marginLeft:'10px',alignItems:'center'}} >
+                                                            <img src={user.picture} alt="Rounded Image" style={{width: '30px', height: '30px', borderRadius: '50%', display: 'block' ,marginRight:'5px'}} />
+                                                                <span className="cart-quantity">{user.name}</span>
+                                                        </div>
+                                                    )
+                                                }
                                             </Link>
                                         </div>
                                     </div>

@@ -17,16 +17,19 @@ import ContextProvider from "./utils/ContextProvider"
 import Product from './components/Productdetails';
 import Cart from './components/Cart';
 import Nopage from './components/Nopage';
+import Login from './components/Login'
+import { useAuth0 } from '@auth0/auth0-react';
 
 function App() {
 
-
+  const {isAuthenticated} = useAuth0()
 
   return (
     <BrowserRouter>
       <ContextProvider>
         <Navbar />
         <Routes>
+          <Route element={<Login />} path='/login' />
           <Route element={<Home />} path='/' />
           <Route element={<SinglePost />} path='/singlepost' />
           <Route element={<About />} path='/about' />

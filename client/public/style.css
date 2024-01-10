@@ -129,6 +129,10 @@ img {
 .height-800 {
   height: 800px; }
 
+/* .btnhover::after{
+  content: "Please Login to add to cart";
+} */
+
 /* :: 3.3.0 Section Padding */
 .section-padding-100 {
   padding-top: 100px;

@@ -492,8 +492,8 @@ function Home() {
                             <div className="col-12">
                                 {/* Section Heading */}
                                 <div className="section-heading text-center">
-                                    <h2>LATEST NEWS</h2>
-                                    <p>The breaking news about Gardening &amp; House plants</p>
+                                    <h2>Plant Diseases</h2>
+                                    <p>The breaking news about Gardening &amp; House plants. </p>
                                 </div>
                             </div>
                         </div>
